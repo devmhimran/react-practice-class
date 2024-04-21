@@ -1,10 +1,44 @@
-import NewComponent from "./Component/NewComponent";
+// import NewComponent from "./Component/NewComponent";
+
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import Post from "./pages/Post/Post";
+import User from "./pages/User/User";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import SinglePost from "./pages/SinglePost/SinglePost";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "dashboard",
+    children: [
+      {
+        index: true,
+        element: <Dashboard />,
+      },
+      {
+        path: "post",
+        element: <Post />,
+      },
+    ],
+  },
+  {
+    path: "/User",
+    element: <User />,
+  },
+  {
+    path: "/post/:id",
+    element: <SinglePost />,
+  },
+]);
 
 export default function App() {
-  // const name1 = "John";
-  // const name2 = "Doe";
-  // const name3 = "Smith";
+  // eslint-disable-next-line no-unused-vars
   const array = ["john", "doe", "smith"];
+  // eslint-disable-next-line no-unused-vars
   const arrayOfObject = [
     { name: "John", email: "john@example.com" },
     { name: "Doe", email: "doe@example.com" },
@@ -12,14 +46,9 @@ export default function App() {
     { name: "smith", email: "" },
   ];
 
-  console.log(arrayOfObject);
   return (
-    <div className="container mx-auto mt-20">
-      <div className="grid grid-cols-3 gap-5">
-        {arrayOfObject.map((item, index) => (
-          <NewComponent key={index} data={item} />
-        ))}
-      </div>
-    </div>
+    <>
+      <RouterProvider router={router} />
+    </>
   );
 }
