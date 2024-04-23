@@ -6,6 +6,8 @@ import Post from "./pages/Post/Post";
 import User from "./pages/User/User";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import SinglePost from "./pages/SinglePost/SinglePost";
+import Products from "./pages/Products/Products";
+import SingleProduct from "./pages/SingleProduct/SingleProduct";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
     path: "/post/:id",
     element: <SinglePost />,
   },
+  {
+    path: "/products",
+    element: <Products />,
+  },
+  {
+    path: "/product/:id",
+    element: <SingleProduct />,
+  },
 ]);
 
 export default function App() {
@@ -47,8 +57,8 @@ export default function App() {
   ];
 
   return (
-    <>
+    <div className="container mx-auto bg-gray-100">
       <RouterProvider router={router} />
-    </>
+    </div>
   );
 }

@@ -15,3 +15,12 @@ To run the project please enter that porject and hit this command
 ```bash
   npm run dev
 ```
+
+## Free API Resource
+
+- [Fake Store API](https://fakestoreapi.com/)
+- [Fake Store API (All Products)](https://fakestoreapi.com/products)
+- [Fake Store API (Single Product)](https://fakestoreapi.com/products/2)
+- [Json Place Holder](https://jsonplaceholder.typicode.com/)
+- [Json Place Holder (All Posts)](https://jsonplaceholder.typicode.com/posts)
+- [Json Place Holder (Single Posts)](https://jsonplaceholder.typicode.com/posts/1)
